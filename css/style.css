@@ -1,0 +1,939 @@
+/* =====================================================
+   COLOR THEME (PRIMARY: BEIGE / GOLD)
+===================================================== */
+:root {
+  /* Backgrounds */
+  --bg-main: #faf7f2;
+  --bg-section: #fffaf4;
+  --bg-accent: #f5e6c8;
+
+  /* Accent colors */
+  --color-primary: #b08d57;
+  --color-primary-soft: rgba(176, 141, 87, 0.6);
+
+  /* Text colors */
+  --text-main: #3b2f2f;
+  --text-body: #4a3f3f;
+  --text-muted: #6b5a4a;
+}
+
+/* =====================================================
+   GLOBAL RESET & BASE
+===================================================== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Cormorant Garamond', serif;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+}
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* =====================================================
+   TYPOGRAPHY & SHARED ELEMENTS
+===================================================== */
+.section-title,
+.hero-names {
+  font-family: 'Playfair Display', serif;
+}
+
+.section-subtitle {
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin-bottom: 6px;
+}
+
+.section-divider {
+  width: 70px;
+  height: 2px;
+  background-color: var(--color-primary);
+  margin: 14px 0 28px;
+}
+
+/* =====================================================
+   HERO SECTION
+===================================================== */
+.hero {
+  min-height: 100vh;
+  padding: 80px 16px;
+  text-align: center;
+  background:
+    linear-gradient(
+      rgba(255, 248, 240, 0.6),
+      rgba(255, 248, 240, 0.6)
+    ),
+    url("../assets/images/hero-bg.jpg") center / cover no-repeat;
+}
+
+.hero-content {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/* Hero intro */
+.hero-intro {
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+/* Hero names (mobile-first) */
+.hero-names {
+  font-weight: 600;
+  line-height: 1.1;
+  margin-bottom: 16px;
+}
+
+.hero-names .name {
+  display: block;
+  font-size: 48px;
+}
+
+.hero-names .amp {
+  display: block;
+  font-size: 36px;
+  font-style: italic;
+  color: var(--color-primary);
+  margin: 6px 0;
+}
+
+/* Hero divider */
+.hero-divider {
+  width: 120px;
+  height: 1px;
+  background-color: var(--color-primary-soft);
+  margin: 28px auto 24px;
+}
+
+/* Hero date & location */
+.hero-date {
+  font-size: 15px;
+  letter-spacing: 2px;
+  margin-bottom: 6px;
+}
+
+.hero-location {
+  font-size: 14px;
+  letter-spacing: 1.5px;
+  margin-bottom: 28px;
+}
+
+/* Hero quote */
+.hero-quote {
+  font-size: 18px;
+  font-style: italic;
+  line-height: 1.8;
+  color: var(--text-muted);
+  padding: 0 10px;
+}
+
+/* =====================================================
+   HERO ANIMATIONS
+===================================================== */
+.hero-intro,
+.hero-names,
+.hero-divider,
+.hero-date,
+.hero-location,
+.hero-quote {
+  opacity: 0;
+  animation: fadeUp 1s ease forwards;
+}
+
+.hero-intro    { animation-delay: 0.2s; }
+.hero-names    { animation-delay: 0.4s; }
+.hero-divider  { animation-delay: 0.6s; }
+.hero-date,
+.hero-location { animation-delay: 0.8s; }
+.hero-quote    { animation-delay: 1s; }
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =====================================================
+   OUR STORY SECTION
+===================================================== */
+.our-story {
+  background-color: var(--bg-section);
+  padding: 120px 0;
+}
+
+.story-image-frame {
+  background: var(--bg-accent);
+  padding: 14px;
+  border-radius: 16px;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+  display: inline-block;
+}
+
+.story-img {
+  border-radius: 10px;
+  display: block;
+}
+
+.story-text {
+  font-size: 17px;
+  line-height: 2;
+  color: var(--text-body);
+  max-width: 560px;
+  margin-bottom: 26px;
+}
+
+.story-quote {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-style: italic;
+  color: var(--text-muted);
+  margin: 36px 0;
+  padding-left: 18px;
+  border-left: 3px solid var(--color-primary);
+}
+
+/* =====================================================
+   RESPONSIVE BREAKPOINTS
+===================================================== */
+
+/* Tablet and up */
+@media (min-width: 768px) {
+  .hero-names .name {
+    display: inline;
+    font-size: 72px;
+  }
+
+  .hero-names .amp {
+    display: inline;
+    font-size: 56px;
+    margin: 0 12px;
+  }
+}
+
+/* Desktop and up */
+@media (min-width: 1200px) {
+  .hero-names .name {
+    font-size: 88px;
+  }
+
+  .hero-names .amp {
+    font-size: 64px;
+  }
+}
+
+/* Mobile refinements */
+@media (max-width: 767px) {
+  .our-story {
+    padding: 80px 0;
+    text-align: center;
+  }
+
+  .section-divider {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .story-text,
+  .story-quote {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .story-text {
+    font-size: 16px;
+    line-height: 1.9;
+  }
+
+  .story-quote {
+    padding-left: 0;
+    border-left: none;
+    border-top: 2px solid var(--color-primary);
+    padding-top: 18px;
+  }
+}
+
+/* =====================================================
+   COUNTDOWN SECTION – ELEGANT ANCHOR
+===================================================== */
+
+.countdown {
+  position: relative;
+  background: linear-gradient(
+    180deg,
+    #7A4E32 0%,
+    #6B432B 100%
+  );
+  padding: 120px 0;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Soft ornamental overlay (no image needed) */
+.countdown::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at top left, rgba(255,255,255,0.06), transparent 40%),
+    radial-gradient(circle at bottom right, rgba(255,255,255,0.04), transparent 45%);
+  pointer-events: none;
+}
+
+/* Section headings inside countdown */
+.countdown .section-title {
+  color: #fffaf4;
+}
+
+.countdown .section-subtitle {
+  color: rgba(255, 250, 244, 0.75);
+}
+
+/* =====================================================
+   COUNTDOWN GRID
+===================================================== */
+
+.countdown-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  max-width: 720px;
+  margin: 0 auto 24px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Individual boxes */
+.countdown-box {
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: 14px;
+  padding: 28px 12px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(2px);
+}
+
+/* Numbers */
+.countdown-number {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: 42px;
+  color: var(--color-primary);
+  line-height: 1;
+}
+
+/* Labels */
+.countdown-label {
+  display: block;
+  margin-top: 8px;
+  font-size: 12px;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  color: #7a6a58;
+}
+
+/* Footer note */
+.countdown-note {
+  font-size: 16px;
+  font-style: italic;
+  color: rgba(255, 250, 244, 0.75);
+  margin-top: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+/* =====================================================
+   CEREMONIAL REVEAL (COUNTDOWN END)
+===================================================== */
+
+.ceremony-reveal {
+  display: none;
+  margin-top: 48px;
+  text-align: center;
+  opacity: 0;
+  animation: fadeUp 1s ease forwards;
+  position: relative;
+  z-index: 2;
+}
+
+.ceremony-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  color: #fffaf4;
+  margin-bottom: 12px;
+}
+
+.ceremony-date {
+  font-size: 19px;
+  font-style: italic;
+  color: rgba(255, 250, 244, 0.75);
+}
+
+/* =====================================================
+   ANIMATION
+===================================================== */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =====================================================
+   RESPONSIVE REFINEMENT
+===================================================== */
+
+@media (max-width: 767px) {
+  .countdown {
+    padding: 80px 0;
+  }
+
+  .countdown-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .countdown-number {
+    font-size: 36px;
+  }
+
+  .ceremony-title {
+    font-size: 26px;
+  }
+}
+
+
+/* =====================================================
+   EVENTS SECTION
+===================================================== */
+.events {
+  background-color: var(--bg-main);
+  padding: 120px 0;
+}
+
+.event-card {
+  background: var(--bg-section);
+  padding: 36px 28px;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  height: 100%;
+}
+
+.event-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  color: var(--color-primary);
+  margin-bottom: 12px;
+}
+
+.event-time {
+  font-size: 14px;
+  letter-spacing: 1px;
+  margin-bottom: 14px;
+  color: var(--text-muted);
+}
+
+.event-venue {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--text-body);
+  margin-bottom: 20px;
+}
+
+.event-map {
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  text-decoration: none;
+  border-bottom: 1px solid var(--color-primary);
+  padding-bottom: 2px;
+}
+
+.event-map:hover {
+  opacity: 0.8;
+}
+
+/* Mobile refinements */
+@media (max-width: 767px) {
+  .events {
+    padding: 80px 0;
+  }
+
+  .event-card {
+    padding: 28px 22px;
+  }
+
+  .event-title {
+    font-size: 22px;
+  }
+}
+/* Embedded Google Map inside event card */
+.event-map-embed {
+  width: 100%;
+  height: 180px;
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 18px;
+}
+
+.event-map-embed iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+@media (max-width: 767px) {
+  .event-map-embed {
+    height: 200px;
+  }
+}
+
+/* =====================================================
+   FIXED DESIGNER GALLERY (COMPACT)
+===================================================== */
+
+.gallery {
+  padding: 88px 0;
+}
+
+/* ===== DESKTOP GRID ===== */
+.gallery-grid-fixed {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  grid-template-rows: 220px 220px 180px 240px;
+  gap: 18px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Desktop placement */
+.tall {
+  grid-row: 1 / 3;
+}
+
+.wide-top {
+  grid-row: 1;
+}
+
+.wide-bottom {
+  grid-row: 2;
+}
+
+.square-left {
+  grid-row: 3;
+}
+
+.square-right {
+  grid-row: 3;
+}
+
+.wide-full {
+  grid-column: 1 / 3;
+  grid-row: 4;
+}
+
+/* Gallery item */
+.g-item {
+  background: var(--bg-accent);
+  padding: 10px;
+  border-radius: 14px;
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+}
+
+.g-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+}
+
+/* =====================================================
+   LIGHTBOX (FULL IMAGE VIEW)
+===================================================== */
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.88);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.lightbox img {
+  max-width: 92%;
+  max-height: 92%;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+/* =====================================================
+   MOBILE FIX (CORRECT & STABLE)
+===================================================== */
+
+@media (max-width: 767px) {
+
+  /* Reduce vertical breathing space */
+  .gallery {
+    padding: 64px 0;
+  }
+
+  /* Switch to single column flow */
+  .gallery-grid-fixed {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 16px;
+  }
+
+  /* RESET all desktop grid positioning */
+  .gallery-grid-fixed .tall,
+  .gallery-grid-fixed .wide-top,
+  .gallery-grid-fixed .wide-bottom,
+  .gallery-grid-fixed .square-left,
+  .gallery-grid-fixed .square-right,
+  .gallery-grid-fixed .wide-full {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  /* Control height per item (NOT grid rows) */
+  .gallery-grid-fixed .g-item {
+    height: 240px;
+  }
+
+  /* Optional editorial rhythm */
+  .gallery-grid-fixed .g-item:nth-child(3n) {
+    height: 280px;
+  }
+
+
+
+  .story-text,
+  .story-quote {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  .story-quote {
+    border-left: none;
+    border-top: 2px solid var(--color-primary);
+    padding-top: 16px;
+  }
+}
+
+/* =====================================================
+   OUR FAMILIES (EXACT STYLE)
+===================================================== */
+
+.families {
+  background: #fdfaf5;
+  padding: 120px 0;
+  text-align: center;
+}
+
+.families-eyebrow {
+  display: block;
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: var(--color-primary);
+  margin-bottom: 8px;
+}
+
+.families-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.families-divider {
+  display: block;
+  width: 48px;
+  height: 2px;
+  background: var(--color-primary);
+  margin: 0 auto 60px;
+}
+
+/* Grid */
+.families-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 48px;
+  max-width: 760px;
+  margin: 0 auto 56px;
+}
+
+/* Cards */
+.family-card {
+  background: #ffffff;
+  padding: 48px 32px;
+  border-radius: 16px;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
+}
+
+.family-heart {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(139, 94, 60, 0.12);
+  color: var(--color-primary);
+  font-size: 18px;
+  margin-bottom: 16px;
+}
+
+.family-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  margin-bottom: 6px;
+}
+
+.family-family-name {
+  font-size: 13px;
+  color: var(--color-primary);
+  margin-bottom: 18px;
+}
+
+.family-parents {
+  font-size: 15px;
+  line-height: 1.9;
+  margin-bottom: 12px;
+}
+
+.family-role {
+  font-size: 13px;
+  font-style: italic;
+  color: var(--text-muted);
+}
+
+/* Quote */
+.families-quote {
+  max-width: 700px;
+  margin: 0 auto 12px;
+  font-size: 16px;
+  font-style: italic;
+  line-height: 1.7;
+  color: #333;
+}
+
+.families-sign {
+  font-size: 13px;
+  color: var(--color-primary);
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 767px) {
+  .families {
+    padding: 90px 0;
+  }
+
+  .families-title {
+    font-size: 28px;
+  }
+
+  .families-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .family-card {
+    padding: 40px 24px;
+  }
+}
+
+/* =====================================================
+   THANK YOU SECTION (CLOSING)
+===================================================== */
+
+.thank-you {
+  background: linear-gradient(
+    180deg,
+    #6b432b 0%,
+    #4f3324 100%
+  );
+  padding: 80px 0px 25px 0;
+  text-align: center;
+  color: #fffaf4;
+}
+
+/* Container (keep consistent with site) */
+.container {
+  max-width: 1100px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+/* Title */
+.thank-you-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 38px;
+  margin-bottom: 16px;
+}
+
+/* Main text */
+.thank-you-text {
+  max-width: 620px;
+  margin: 0 auto 32px;
+  font-size: 16px;
+  line-height: 1.8;
+  color: rgba(255, 250, 244, 0.85);
+}
+
+/* Divider */
+.thank-you-divider {
+  width: 60px;
+  height: 2px;
+  background: rgba(255, 250, 244, 0.6);
+  margin: 0 auto 28px;
+}
+
+/* Signature */
+.thank-you-signature span {
+  display: block;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgba(255, 250, 244, 0.7);
+  margin-bottom: 6px;
+}
+
+.thank-you-signature strong {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+}
+
+/* Contact (subtle footer note) */
+.thank-you-contact {
+  margin-top: 32px;
+  font-size: 13px;
+  color: rgba(255, 250, 244, 0.65);
+}
+
+.thank-you-contact p {
+  margin-bottom: 8px;
+}
+
+.thank-you-contact a {
+  color: rgba(255, 250, 244, 0.85);
+  text-decoration: none;
+  margin: 0 6px;
+}
+
+.thank-you-contact a:hover {
+  text-decoration: underline;
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 767px) {
+  .thank-you {
+    padding: 90px 0;
+  }
+
+  .thank-you-title {
+    font-size: 30px;
+  }
+
+  .thank-you-text {
+    font-size: 15px;
+  }
+
+  .thank-you-contact {
+    margin-top: 24px;
+    line-height: 1.6;
+  }
+}
+
+/* =====================================================
+   SITE CREDIT – VISION ART
+===================================================== */
+
+.site-credit {
+  margin-top: 40px;
+  text-align: center;
+  opacity: 0.6;
+}
+
+.site-credit-text {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.site-credit-brand {
+  display: block;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+}
+
+.site-credit-links {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+}
+
+.site-credit-links a {
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255, 250, 244, 0.12);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.site-credit-links a:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.site-credit-links svg {
+  width: 14px;
+  height: 14px;
+  fill: #fffaf4;
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .site-credit {
+    margin-top: 28px;
+  }
+}
